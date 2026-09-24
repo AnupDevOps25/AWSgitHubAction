@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SkyBook - Flight Booking</title>
+	<style>
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+		body { font-family: Arial, sans-serif; color: #17324d; background: #f5f9fc; }
+		header { display: flex; align-items: center; justify-content: space-between; padding: 22px 8%; background: #fff; }
+		.logo { color: #1479d1; font-size: 1.6rem; font-weight: 700; }
+		nav a { color: #17324d; text-decoration: none; margin-left: 28px; font-size: .95rem; }
+		nav a:hover { color: #1479d1; }
+		.hero { padding: 76px 8% 110px; text-align: center; background: linear-gradient(135deg, #e8f5ff, #c9e8ff); }
+		.hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 14px; }
+		.hero p { color: #557087; font-size: 1.1rem; margin-bottom: 34px; }
+		.booking-card { max-width: 1050px; margin: auto; padding: 26px; text-align: left; background: #fff; border-radius: 16px; box-shadow: 0 12px 35px #3b82b522; }
+		.trip-type { display: flex; gap: 22px; margin-bottom: 22px; color: #526c81; }
+		.trip-type label { cursor: pointer; }
+		.trip-type input { accent-color: #1479d1; margin-right: 6px; }
+		.fields { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 12px; align-items: end; }
+		.field label { display: block; margin-bottom: 7px; color: #60788c; font-size: .8rem; font-weight: bold; }
+		.field input, .field select { width: 100%; padding: 14px 12px; border: 1px solid #d5e1e9; border-radius: 8px; color: #17324d; background: #fff; }
+		button { padding: 14px 22px; border: 0; border-radius: 8px; color: #fff; background: #1479d1; font-size: 1rem; cursor: pointer; }
+		button:hover { background: #0e62ad; }
+		.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1050px; margin: 55px auto; padding: 0 24px; text-align: center; }
+		.feature { padding: 22px; background: #fff; border-radius: 12px; }
+		.feature .icon { font-size: 2rem; margin-bottom: 12px; }
+		.feature h3 { margin-bottom: 8px; }
+		.feature p { color: #718596; line-height: 1.5; font-size: .92rem; }
+		footer { padding: 25px; text-align: center; color: #718596; background: #fff; font-size: .9rem; }
+		@media (max-width: 800px) { .fields { grid-template-columns: repeat(2, 1fr); } .fields button { width: 100%; } }
+		@media (max-width: 520px) { header { padding: 18px 5%; } nav a { margin-left: 12px; font-size: .8rem; } .hero { padding: 55px 5% 75px; } .booking-card { padding: 18px; } .fields, .features { grid-template-columns: 1fr; } }
+	</style>
 </head>
 <body>
-    <h1>hello, world!</h1>
+	<header>
+		<div class="logo">✈ SkyBook</div>
+		<nav><a href="#">Home</a><a href="#features">Why us</a><a href="#">Sign in</a></nav>
+	</header>
+
+	<main>
+		<section class="hero">
+			<h1>Explore the world with ease</h1>
+			<p>Find and book your perfect flight at the best price.</p>
+			<form class="booking-card">
+				<div class="trip-type">
+					<label><input type="radio" name="trip" checked> Round trip</label>
+					<label><input type="radio" name="trip"> One way</label>
+				</div>
+				<div class="fields">
+					<div class="field"><label for="from">FROM</label><input id="from" type="text" placeholder="Departure city"></div>
+					<div class="field"><label for="to">TO</label><input id="to" type="text" placeholder="Arrival city"></div>
+					<div class="field"><label for="date">DEPARTURE</label><input id="date" type="date"></div>
+					<div class="field"><label for="passengers">PASSENGERS</label><select id="passengers"><option>1 Adult</option><option>2 Adults</option><option>Family</option></select></div>
+					<button type="submit">Search flights</button>
+				</div>
+			</form>
+		</section>
+
+		<section class="features" id="features">
+			<article class="feature"><div class="icon">💰</div><h3>Best prices</h3><p>Compare hundreds of airlines to find fares that fit your budget.</p></article>
+			<article class="feature"><div class="icon">🔒</div><h3>Secure booking</h3><p>Your personal information and payment are always protected.</p></article>
+			<article class="feature"><div class="icon">🌎</div><h3>Global destinations</h3><p>Discover amazing places and start planning your next adventure.</p></article>
+		</section>
+	</main>
+
+	<footer>&copy; 2024 SkyBook. Your journey starts here.</footer>
 </body>
 </html>
